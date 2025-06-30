@@ -72,17 +72,16 @@ function addBookToLibrary(event) {
     cardRemove.addEventListener("click", () => {
       card.remove();
     });
+    cardRead.addEventListener("click", () => {
+      cardRead.classList.toggle("not-read");
+      if (cardRead.textContent === "Not Read") {
+        cardRead.textContent = "Read";
+        book.read = "true";
+      } else cardRead.textContent = "Not Read";
+      book.read = "false";
+    });
 
     myLibrary.forEach((book) => {
-      cardRead.addEventListener("click", () => {
-        cardRead.classList.toggle("not-read");
-        if (cardRead.textContent === "Not Read") {
-          cardRead.textContent = "Read";
-          book.read = "true";
-        } else cardRead.textContent = "Not Read";
-        book.read = "false";
-      });
-
       let uuid = crypto.randomUUID();
       card.style.display = "flex";
       cardTitle.textContent = '" ' + book.title + ' "';
