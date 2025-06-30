@@ -19,21 +19,23 @@ const addBook = document.querySelector(".add-book-button");
 const form = document.querySelector("form");
 const input = document.querySelector("input");
 const main = document.querySelector(".main");
+const grid = document.querySelector(".grid");
+const body = document.querySelector("body");
 
 newBook.addEventListener("click", popup);
 addBook.addEventListener("click", addBookToLibrary);
 
 function popup() {
   form.style.display = "flex";
-  // body.style.filter = "blur(4px)";
+  grid.classList.add("blur");
 
-  // grid.classList.add("blur");
-  // body.addEventListener("click", (e) => {
-  //   if (e.target !== newBook) {
-  //     form.style.display = "none";
-  //     form.reset();
-  //   }
-  // });
+  body.addEventListener("click", (e) => {
+    if (!e.target.classList.contains("exit")) {
+      form.style.display = "none";
+      grid.classList.remove("blur");
+      form.reset();
+    }
+  });
 }
 
 function addBookToLibrary(event) {
@@ -71,16 +73,16 @@ function addBookToLibrary(event) {
       card.remove();
     });
 
-    cardRead.addEventListener("click", () => {
-      cardRead.classList.toggle("not-read");
-      if (cardRead.textContent === "Not Read") {
-        cardRead.textContent = "Read";
-        book.read = "true";
-      } else cardRead.textContent = "Not Read";
-      book.read = "false";
-    });
-
     myLibrary.forEach((book) => {
+      cardRead.addEventListener("click", () => {
+        cardRead.classList.toggle("not-read");
+        if (cardRead.textContent === "Not Read") {
+          cardRead.textContent = "Read";
+          book.read = "true";
+        } else cardRead.textContent = "Not Read";
+        book.read = "false";
+      });
+
       let uuid = crypto.randomUUID();
       card.style.display = "flex";
       cardTitle.textContent = '" ' + book.title + ' "';
@@ -94,6 +96,9 @@ function addBookToLibrary(event) {
         cardRead.textContent = "Read";
       }
     });
+    form.style.display = "none";
+    grid.classList.remove("blur");
+
     form.reset();
   }
 }

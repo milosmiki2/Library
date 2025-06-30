@@ -11,93 +11,53 @@
     <div class="grid">
       <div class="header"><h1>Library</h1></div>
       <div class="sidebar">
-        <button class="new-book-button">+ New book</button>
-
-        <form action="" method="get">
-          <div>
-            <input
-              type="text"
-              name="book-title"
-              id="book-title"
-              placeholder="Title"
-              autofocus
-              required
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              name="book-author"
-              id="book-author"
-              placeholder="Author"
-              required
-            />
-          </div>
-          <div>
-            <input
-              type="number"
-              name="book-pages"
-              id="book-pages"
-              placeholder="Pages"
-              required
-              min="0"
-              max="2000"
-              step=""
-            />
-          </div>
-          <div class="div">
-            <label for="book-read">Have you read this book ?</label>
-            <input type="checkbox" name="book-read" id="book-read" />
-          </div>
-          <button type="submit" class="add-book-button">Add book</button>
-        </form>
+        <button class="new-book-button exit">+ New book</button>
       </div>
-      <div class="main">
-        <div class="card">
-          <p class="card-title"></p>
-          <p class="card-author"></p>
-          <p class="card-pages"></p>
-          <button class="read">Read</button>
-          <button class="remove">Remove</button>
-        </div>
-      </div>
-      <!-- <div class="card">
-          <p>title</p>
-          <p>author</p>
-          <p>pages</p>
-          <button class="read not-read">Read</button>
-          <button class="remove">Remove</button>
-        </div>
-        <div class="card">
-          <p>title</p>
-          <p>author</p>
-          <p>pages</p>
-          <button class="read not-read">Read</button>
-          <button class="remove">Remove</button>
-        </div>
-        <div class="card">
-          <p>title</p>
-          <p>author</p>
-          <p>pages</p>
-          <button class="read not-read">Read</button>
-          <button class="remove">Remove</button>
-        </div>
-        <div class="card">
-          <p>title</p>
-          <p>author</p>
-          <p>pages</p>
-          <button class="read not-read">Read</button>
-          <button class="remove">Remove</button>
-        </div>
-        <div class="card">
-          <p class="card-title">title</p>
-          <p class="card-author">author</p>
-          <p class="card-pages">pages</p>
-          <button class="read">Read</button>
-          <button class="remove">Remove</button>
-        </div>
-      </div> -->
+      <div class="main"></div>
       <div class="footer"><p>Copyright &copy; 2025 Milos Manojlovic</p></div>
+    </div>
+    <div class="form-container">
+      <form action="" method="get" class="exit">
+        <div>
+          <input
+            type="text"
+            name="book-title"
+            id="book-title"
+            placeholder="Title"
+            autofocus
+            required
+            class="exit"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            name="book-author"
+            id="book-author"
+            placeholder="Author"
+            required
+            class="exit"
+          />
+        </div>
+        <div>
+          <input
+            type="number"
+            name="book-pages"
+            id="book-pages"
+            placeholder="Pages"
+            required
+            min="0"
+            max="2000"
+            step=""
+            class="exit"
+          />
+        </div>
+        <div class="div">
+          <label for="book-read" class="exit">Have you read this book ?</label>
+          <input type="checkbox" name="book-read" id="book-read" class="exit" />
+        </div>
+        <button type="submit" class="add-book-button exit">Add book</button>
+      </form>
     </div>
   </body>
 </html>

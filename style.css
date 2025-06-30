@@ -115,6 +115,13 @@ form {
   backdrop-filter: 2px;
 }
 
+.form-container {
+  position: fixed;
+  /* z-index: 2; */
+  top: 250px;
+  left: 45px;
+}
+
 form button {
   width: 100px;
   padding: 5px 10px;
