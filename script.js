@@ -1,11 +1,13 @@
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.info = function () {
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+  info() {
     return `${this.title}, ${this.author}, ${this.pages}, ${this.read}`;
-  };
+  }
 }
 
 const myLibrary = [];
@@ -28,7 +30,6 @@ addBook.addEventListener("click", addBookToLibrary);
 function popup() {
   form.style.display = "flex";
   grid.classList.add("blur");
-
   body.addEventListener("click", (e) => {
     if (!e.target.classList.contains("exit")) {
       form.style.display = "none";
